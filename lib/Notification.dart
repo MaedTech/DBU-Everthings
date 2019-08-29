@@ -9,7 +9,15 @@ class DbuEvethingNot extends StatefulWidget {
 }
 
 class _DbuEvethingNotState extends State<DbuEvethingNot> {
+  int _selectedIndex=1;
+  final _widgeroptions =[
+    Text('Index 0: Notification '),
+    Text('Index 1: Map '),
+    Text('Index 2: Curriculum')
+  ];
+
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
 
@@ -168,6 +176,21 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
 
       ),
         backgroundColor: Colors.white,
+      body: Center(),
+      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
+        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
+        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
+      ],
+      currentIndex: _selectedIndex,
+        fixedColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
     );              
+  }
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex=index;
+    });
   }
 }
