@@ -178,9 +178,32 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
         backgroundColor: Colors.white,
       body: Center(),
       bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
-        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
-        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
+
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications),
+            onPressed: (){
+            Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => AboutPage())
+            );
+            }),title: Text('Notifications')),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => AboutPage())
+              );
+            }), title: Text(' Places ')),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => AboutPage())
+              );
+            }), title:  Text('Curriculum')),
+
+//        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
+//        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
+//        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
       ],
       currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
