@@ -161,9 +161,13 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
       ),
       appBar: AppBar(
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.search, color: Colors.white,), onPressed: null, )
+        ],
 
       ),
-        backgroundColor: Colors.blue,
-    );
+        backgroundColor: Colors.white,
+    );              
   }
 }
