@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'aboutus.dart';
-
+import 'dbueverthingmap.dart';
+import 'bottom.dart';
 
 
 class DbuEvethingNot extends StatefulWidget {
@@ -179,27 +180,28 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
       body: Center(),
       bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
 
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications, size: 20,),
             onPressed: (){
             Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => AboutPage())
+                builder: (BuildContext context) => DbuEvethingNot())
             );
             }),title: Text('Notifications')),
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map, size: 20,),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => DbuEverythingMap())
+              );
+            }), title: Text(' Places ', style: TextStyle(fontSize: 10),)),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu, size: 20,),
             onPressed: (){
               Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (BuildContext context) => AboutPage())
               );
-            }), title: Text(' Places ')),
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu),
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => AboutPage())
-              );
-            }), title:  Text('Curriculum')),
+            }
+            ), title:  Text('Curriculum'), ),
 
 //        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
 //        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
