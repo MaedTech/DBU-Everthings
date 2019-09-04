@@ -4,6 +4,7 @@
 //google map
 import 'package:flutter/material.dart';
 import 'Notification.dart';
+import 'dbueverthingmap.dart';
 
 void main() {
   runApp( new DbuEvething());
@@ -14,7 +15,7 @@ class DbuEvething extends StatelessWidget {
     return new MaterialApp(
       title: 'Agenagn Login',
       debugShowCheckedModeBanner: false,
-      home: new DbuEvethingNot(),
+      home: new DbuEverythingMap(),
     );
   }
 }
