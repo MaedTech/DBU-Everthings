@@ -28,6 +28,13 @@ class DbuEverythingMap extends StatefulWidget {
 
 class _DbuEverythingMapState extends State<DbuEverythingMap> {
   AppState appState = AppState();
+  int _selectedIndex=1;
+  final _widgeroptions =[
+    Text('Index 0: Notification '),
+    Text('Index 1: Map '),
+    Text('Index 2: Curriculum')
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +47,53 @@ class _DbuEverythingMapState extends State<DbuEverythingMap> {
         );
       },
       home: _AstuNavHomePage(),
+      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
+
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications, size: 20,),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => DbuEvethingNot())
+              );
+            }),title: Text('Notifications')),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map, size: 20,),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => DbuEverythingMap())
+              );
+            }), title: Text(' Places ', style: TextStyle(fontSize: 10),)),
+        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu, size: 20,),
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => AboutPage())
+              );
+            }
+        ), title:  Text('Curriculum'), ),
+
+//        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
+//        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
+//        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
+      ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
     );
+  }
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex=index;
+    });
   }
 }
 
 class _AstuNavHomePage extends StatelessWidget {
   const _AstuNavHomePage({Key key}) : super(key: key);
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -206,30 +254,35 @@ class _AstuNavHomePage extends StatelessWidget {
       //     new bottomNavigationBar(icon: new Icon.menu, title: new text("Menu")),
       //   ],
 
-    bottomNavigationBar: new BottomAppBar(
+//    bottomNavigationBar: new BottomAppBar(
+//
+//    child: IconButton(
+//              icon: Icon(
+//                AppState.of(context).viewType == PlaceTrackerViewType.map
+//                    ? Icons.list
+//                    : Icons.arrow_back,
+//                size: 32.0,
+//              ),
+//              onPressed: () {
+//                AppState.updateWith(
+//                  context,
+//                  viewType:
+//                      AppState.of(context).viewType == PlaceTrackerViewType.map
+//                          ? PlaceTrackerViewType.list
+//                          : PlaceTrackerViewType.map,
+//                );
+//
+//                },
+//               )
+//    ),
 
-    child: IconButton(
-              icon: Icon(
-                AppState.of(context).viewType == PlaceTrackerViewType.map
-                    ? Icons.list
-                    : Icons.arrow_back,
-                size: 32.0,
-              ),
-              onPressed: () {
-                AppState.updateWith(
-                  context,
-                  viewType:
-                      AppState.of(context).viewType == PlaceTrackerViewType.map
-                          ? PlaceTrackerViewType.list
-                          : PlaceTrackerViewType.map,
-                );
-                
-                },
-               )
-    ),
     );
   }
+
 }
+
+
+
 
 class AppState {
   const AppState({
