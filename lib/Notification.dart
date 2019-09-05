@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'aboutus.dart';
 import 'dbueverthingmap.dart';
 import 'bottom.dart';
+import 'curriculum.dart';
 
 
 class DbuEvethingNot extends StatefulWidget {
@@ -198,7 +199,7 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
             onPressed: (){
               Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (BuildContext context) => AboutPage())
+                      builder: (BuildContext context) => Curriculum())
               );
             }
             ), title:  Text('Curriculum'), ),
