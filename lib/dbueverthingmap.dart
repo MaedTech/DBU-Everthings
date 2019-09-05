@@ -47,39 +47,39 @@ class _DbuEverythingMapState extends State<DbuEverythingMap> {
         );
       },
       home: _AstuNavHomePage(),
-      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
-
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications, size: 20,),
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => DbuEvethingNot())
-              );
-            }),title: Text('Notifications')),
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map, size: 20,),
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => DbuEverythingMap())
-              );
-            }), title: Text(' Places ', style: TextStyle(fontSize: 10),)),
-        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu, size: 20,),
-            onPressed: (){
-              Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => AboutPage())
-              );
-            }
-        ), title:  Text('Curriculum'), ),
-
-//        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
-//        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
-//        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
-      ],
-        currentIndex: _selectedIndex,
-        fixedColor: Colors.blue,
-        onTap: _onItemTapped,
-      ),
+//      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
+//
+//        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.notifications, size: 20,),
+//            onPressed: (){
+//              Navigator.of(context).push(
+//                  MaterialPageRoute(
+//                      builder: (BuildContext context) => DbuEvethingNot())
+//              );
+//            }),title: Text('Notifications')),
+//        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.map, size: 20,),
+//            onPressed: (){
+//              Navigator.of(context).push(
+//                  MaterialPageRoute(
+//                      builder: (BuildContext context) => DbuEverythingMap())
+//              );
+//            }), title: Text(' Places ', style: TextStyle(fontSize: 10),)),
+//        BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.menu, size: 20,),
+//            onPressed: (){
+//              Navigator.of(context).push(
+//                  MaterialPageRoute(
+//                      builder: (BuildContext context) => AboutPage())
+//              );
+//            }
+//        ), title:  Text('Curriculum'), ),
+//
+////        BottomNavigationBarItem(icon: Icon(Icons.notifications),title: Text('Notification')),
+////        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
+////        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
+//      ],
+//        currentIndex: _selectedIndex,
+//        fixedColor: Colors.blue,
+//        onTap: _onItemTapped,
+//      ),
     );
   }
   void _onItemTapped(int index){
