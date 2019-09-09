@@ -208,7 +208,7 @@ class _DbuEvethingNotState extends State<DbuEvethingNot> {
 //        BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Areas')),
 //        BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Curriculum')),
       ],
-      currentIndex: _selectedIndex,
+
         fixedColor: Colors.blue,
         onTap: _onItemTapped,
       ),
